@@ -32,6 +32,8 @@ eDNA metabarcoding primers (MiFish-U, teleo, Riaz 12S-V5, MarVer1, Fish16S, Lera
 | `eval_markers.py` | Extracts marker amplicons and primer mismatches from an assembly |
 | `primer_mismatch_detail.py` | Per-site mismatch map for each primer |
 | `validate_annotation.py` | Annotation transfer (tblastn, vertebrate mito code; blastn for rRNA/tRNA) and internal-stop check |
+| `mitogenome_coords.py` | Gene and marker-amplicon coordinates on orientation-normalized mitogenomes (start at tRNA-Phe) |
+| `plot_mitogenome_maps.py` | Comparative linear maps with 12S-16S zoom and a circular map (matplotlib) |
 | `environment.yml` | Conda environment |
 
 ```bash
