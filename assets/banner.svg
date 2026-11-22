@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Cryptobenthic reef fishes of the Gulf of California: community structure from collections and environmental DNA">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Cryptobenthic reef fishes of the Gulf of California: environmental DNA approaches to a hidden reef fauna">
   <defs>
     <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0b3c5d"/>
@@ -65,7 +65,7 @@
   <!-- text -->
   <text x="60" y="118" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Cryptobenthic fishes</text>
   <text x="60" y="170" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">of the Gulf of California</text>
-  <text x="62" y="214" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#bfe3e8">Community structure from collections and environmental DNA</text>
+  <text x="62" y="214" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#bfe3e8">Environmental DNA approaches to a hidden reef fauna</text>
   <rect x="62" y="236" width="64" height="4" rx="2" fill="#e07a5f"/>
   <text x="62" y="264" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" letter-spacing="1.5" fill="#8fb7c9">CBF-2026-4124 · OBJECTIVE 1 · CIBNOR</text>
 </svg>

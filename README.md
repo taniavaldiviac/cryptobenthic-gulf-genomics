@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Cryptobenthic fishes of the Gulf of California: community structure from collections and environmental DNA" width="100%">
+  <img src="assets/banner.svg" alt="Cryptobenthic fishes of the Gulf of California: environmental DNA approaches" width="100%">
 </p>
 
 <p align="center">
@@ -18,18 +18,18 @@
 
 Cryptobenthic reef fishes are small, hidden and astonishingly diverse. In the Gulf of California they include gobies, blennies, triplefins, clingfishes and their relatives, many of them endemic. Because they live inside the reef rather than above it, visual censuses miss most of them, and standard fish eDNA markers detect only a handful.
 
-This repository holds the code and analyses for **Objective 1 of project CBF-2026-4124**: describing the spatial structure of the cryptobenthic assemblage across the Gulf of California, and building the molecular tools needed to detect it with environmental DNA.
+This repository holds the environmental DNA (eDNA) component of **Objective 1 of project CBF-2026-4124**: building the molecular tools needed to detect cryptobenthic fishes with eDNA, and using them to describe the spatial structure of the assemblage across the Gulf of California.
 
-> **En español.** Repositorio del Objetivo 1 del proyecto CBF-2026-4124: estructura comunitaria espacial (diversidad alfa y beta) de los peces criptobentónicos arrecifales del Golfo de California, a partir de colectas con anestésico y de ADN ambiental, junto con las herramientas moleculares necesarias para detectarlos.
+> **En español.** Componente de ADN ambiental (eDNA) del Objetivo 1 del proyecto CBF-2026-4124: herramientas moleculares para detectar peces criptobentónicos arrecifales con eDNA y su aplicación para describir la estructura comunitaria espacial (diversidad alfa y beta) en el Golfo de California.
 
 ## What this objective does
 
 <table>
   <tr>
     <td width="33%" valign="top">
-      <h3>Community structure</h3>
-      Alpha and beta diversity of the cryptobenthic assemblage along the Gulf, from anaesthetic collections and eDNA metabarcoding.
-      <br><br><code>analyses/community_structure</code>
+      <h3>eDNA community structure</h3>
+      Alpha and beta diversity of the cryptobenthic assemblage along the Gulf from eDNA metabarcoding.
+      <br><br><code>analyses/edna_community</code>
     </td>
     <td width="33%" valign="top">
       <h3>eDNA blind spots</h3>
@@ -48,20 +48,17 @@ This repository holds the code and analyses for **Objective 1 of project CBF-202
 
 ```mermaid
 flowchart TB
-    A(["Anaesthetic collections"]):::field
+    A(["Reference specimens<br/>(tissue)"]):::field
     B(["Seawater eDNA samples"]):::field
-    C["Species identification"]:::lab
     D["Mitogenomes<br/>(genome skimming)"]:::lab
     F["Local reference database"]:::lab
     M["Cryptobenthic marker"]:::lab
     E["Metabarcoding"]:::lab
     H{{"Alpha and beta diversity"}}:::out
 
-    A --> C
     A --> D --> F --> M --> E
     B --> E
     F --> E
-    C --> H
     E --> H
 
     classDef field fill:#0b3c5d,stroke:#0b3c5d,color:#ffffff
@@ -73,7 +70,7 @@ flowchart TB
 
 | Folder | Contents |
 | --- | --- |
-| [`analyses/community_structure`](analyses/community_structure) | Alpha and beta diversity from collections and eDNA |
+| [`analyses/edna_community`](analyses/edna_community) | Alpha and beta diversity from eDNA metabarcoding |
 | [`analyses/reference_gaps`](analyses/reference_gaps) | Reference coverage, primer mismatches and taxonomic resolution |
 | [`analyses/marker_design`](analyses/marker_design) | Cryptobenthic-specific mitochondrial marker |
 | [`data`](data) | Sample metadata; sequences are deposited in NCBI |
@@ -113,7 +110,7 @@ Raw sequence data are not stored here. eDNA reads and new mitogenome references 
     <td>Centro de Investigaciones Biológicas del Noroeste (CIBNOR), La Paz, Baja California Sur, Mexico</td>
   </tr>
   <tr>
-    <td valign="top"><b>Objective 1 lead</b></td>
+    <td valign="top"><b>eDNA component lead</b></td>
     <td>Tania Valdivia Carrillo</td>
   </tr>
   <tr>
