@@ -9,6 +9,19 @@ Proyecto CBF-2026-4124. Análisis preliminar del 21 de noviembre de 2026. Los da
 | `cripticos_insilico.py` | Script reproducible (Python 3, `requests`) |
 | `results/` (no incluido) | Tablas de resultados; se publicarán con el artículo correspondiente |
 
+## Estructura de la carpeta
+
+| Ruta | Contenido |
+| --- | --- |
+| `cripticos_insilico.py` | Vacíos de referencia, desajustes de cebadores y resolución por especie (GenBank, OBIS) |
+| `sra_mitogenomes/` | Recuperación de mitogenomas desde lecturas públicas (SRA/ENA), validación y mapas |
+| `decompose_deficit.py` | Descomposición del déficit de detección por filtros in silico, con umbral de resolución variable |
+| `plot_deficit_decomposition.py` | Figura de la descomposición (barras apiladas al 100 %) |
+| `reference_bias_model/` | GLMM logístico de la disponibilidad de referencias (grupo, año de descripción, registros GBIF, familia aleatoria) |
+| `monitoring/` | Monitor semanal de secuencias y corridas nuevas en ENA/SRA para una lista de especies |
+
+Las tablas de resultados no se incluyen; se publicarán con el artículo correspondiente.
+
 ## Métodos
 
 **Universo de especies.**
