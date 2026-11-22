@@ -1,6 +1,7 @@
 suppressMessages({library(lme4)})
 d <- read.csv("datos_modelo.csv")
-# rows whose GBIF match is genus-level only are set to NA for anio and occ
+# Rows whose GBIF match is genus-level only (column gbif_rank != "SPECIES") get NA for anio and occ
+if ("gbif_rank" %in% names(d)) { g <- d$gbif_rank != "SPECIES"; d$anio[g] <- NA; d$occ[g] <- NA }
 d$grupo3 <- factor(ifelse(d$grupo %in% c("C","A"), "cripto", ifelse(d$grupo=="R","conspicuo","otros")), levels=c("conspicuo","cripto","otros"))
 d$anio_s <- (d$anio-1900)/50          # per 50 years since 1900
 d$logocc <- log10(d$occ+1)
