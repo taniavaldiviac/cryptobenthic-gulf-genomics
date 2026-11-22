@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <b>Who lives in the cracks of the reef, and can environmental DNA see them?</b>
+  <b>Revealing the hidden diversity of Gulf of California reefs</b>
 </p>
 
 ---
