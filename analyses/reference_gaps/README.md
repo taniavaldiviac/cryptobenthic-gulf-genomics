@@ -46,3 +46,6 @@ Proyecto CBF-2026-4124. Análisis preliminar del 21 de noviembre de 2026. Los da
 - **Desajustes y PCR:** el número de desajustes no predice por sí solo la eficiencia real de la PCR, que depende de su posición, del tipo de desajuste y de las condiciones de reacción.
 - **Coordenadas:** la ubicación por k-meros es aproximada para secuencias cortas o divergentes.
 - **Errores en GenBank:** amplicones idénticos entre especies pueden reflejar errores de identificación en GenBank.
+
+## Mitogenomes from public raw reads
+See [`sra_mitogenomes/`](sra_mitogenomes/): recovery of mitochondrial references from SRA/ENA raw reads (WGS and targeted capture) to fill marker gaps for Gulf of California fishes.

@@ -155,6 +155,27 @@ class RefMap:
         return 0
 
 # ---------------------------------------------------------------- pasos
+def checklist_from_csv(path):
+    """Lista regional propia (columna Species2). Familia y nombre aceptado desde GBIF."""
+    import csv as _csv
+    sp = {}
+    with open(path, encoding="utf-8-sig") as fh:
+        names = [r["Species2"].strip() for r in _csv.DictReader(fh) if r.get("Species2", "").strip()]
+    names = [n for n in names if len(n.split()) == 2 and "species" not in n]
+    for n in names:
+        j = requests.get("https://api.gbif.org/v1/species/match", params={"name": n}, timeout=60).json()
+        fam = j.get("family", "")
+        sp[n] = {"familia": fam, "nombre_gbif": j.get("species", ""),
+                 "grupo": "cripto" if fam in CRYPTO else ("conspicuo_arrecifal" if fam in REEF_CONSP else "otros"),
+                 "registros_obis": ""}
+    return sp
+
+REEF_CONSP = ["Pomacentridae", "Labridae", "Scaridae", "Serranidae", "Lutjanidae", "Haemulidae",
+              "Acanthuridae", "Chaetodontidae", "Pomacanthidae", "Balistidae", "Tetraodontidae",
+              "Mullidae", "Kyphosidae", "Cirrhitidae", "Muraenidae", "Scorpaenidae", "Holocentridae",
+              "Diodontidae", "Ostraciidae", "Monacanthidae", "Zanclidae", "Aulostomidae",
+              "Fistulariidae", "Antennariidae"]
+
 def checklist():
     sp = {}
     for fam in CRYPTO + CONSP:
@@ -172,10 +193,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--email", required=True); ap.add_argument("--api-key")
     ap.add_argument("--outdir", default="resultados_insilico")
+    ap.add_argument("--species-csv", help="Lista propia de especies (columna Species2); si se omite se usa OBIS")
     a = ap.parse_args(); os.makedirs(a.outdir, exist_ok=True)
     ncbi = NCBI(a.email, a.api_key)
 
-    print("1. Lista regional (OBIS)"); sp = checklist()
+    if a.species_csv:
+        print("1. Lista regional (archivo propio + familias GBIF)"); sp = checklist_from_csv(a.species_csv)
+    else:
+        print("1. Lista regional (OBIS)"); sp = checklist()
     print(f"   {len(sp)} especies")
     ref = ncbi.fasta([REF_ACC]); ref = next(iter(ref.values()))
     rm = RefMap(ref)
@@ -183,7 +208,8 @@ def main():
     print("2. Referencias en GenBank")
     seqs = {}
     for s, d in sp.items():
-        o = f'"{s}"[Organism]'
+        alt = d.get("nombre_gbif")
+        o = f'("{s}"[Organism] OR "{alt}"[Organism])' if alt and alt != s else f'"{s}"[Organism]'
         n12, ids = ncbi.search(f'{o} AND (12S OR "small subunit ribosomal RNA" OR "complete genome" '
                                f'OR mitogenome OR "partial genome") NOT PREDICTED[Title]', 30)
         d["coi"], _ = ncbi.search(f'{o} AND (COI OR COX1 OR "cytochrome oxidase subunit I" OR '

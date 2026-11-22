@@ -1,0 +1,9 @@
+name: sramito
+channels: [conda-forge, bioconda]
+dependencies:
+  - sra-tools>=3.0
+  - getorganelle
+  - bwa
+  - samtools>=1.16
+  - seqkit
+  - entrez-direct
