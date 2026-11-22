@@ -31,6 +31,7 @@ eDNA metabarcoding primers (MiFish-U, teleo, Riaz 12S-V5, MarVer1, Fish16S, Lera
 | `sra_mitogenomes_local.sh` | Stand-alone version for a workstation or cluster (sra-tools) |
 | `eval_markers.py` | Extracts marker amplicons and primer mismatches from an assembly |
 | `primer_mismatch_detail.py` | Per-site mismatch map for each primer |
+| `validate_annotation.py` | Annotation transfer (tblastn, vertebrate mito code; blastn for rRNA/tRNA) and internal-stop check |
 | `environment.yml` | Conda environment |
 
 ```bash
@@ -39,6 +40,11 @@ get_organelle_config.py -a animal_mt
 bash run_batch.sh batch.tsv
 python eval_markers.py asm/<species_run>/*path_sequence.fasta amplicons.fa
 ```
+
+## Validation
+Continuity (contigs, circular graph), mean base coverage, annotation transfer from an annotated teleost mitogenome
+(13 protein-coding genes checked for internal stop codons; 2 rRNAs at ≥60% length), and identity against conspecific
+GenBank fragments when available.
 
 ## Notes
 - **Results:** assemblies and summary tables are kept in `results/`, which is not tracked. They will be released upon manuscript submission.
