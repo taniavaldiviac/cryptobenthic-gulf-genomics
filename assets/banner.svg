@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="Cryptobenthic reef fishes of the Gulf of California: community structure from collections and environmental DNA">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b3c5d"/>
+      <stop offset="0.55" stop-color="#0a2a43"/>
+      <stop offset="1" stop-color="#06182a"/>
+    </linearGradient>
+    <linearGradient id="reef" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c8553d"/>
+      <stop offset="0.5" stop-color="#e07a5f"/>
+      <stop offset="1" stop-color="#c8553d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.35" r="0.5">
+      <stop offset="0" stop-color="#3fa7b5" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#3fa7b5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#sea)"/>
+  <rect width="1200" height="360" fill="url(#glow)"/>
+
+  <!-- light rays -->
+  <g fill="#ffffff" opacity="0.05">
+    <polygon points="760,0 840,0 700,360 600,360"/>
+    <polygon points="900,0 950,0 880,360 820,360"/>
+    <polygon points="1040,0 1070,0 1040,360 1000,360"/>
+  </g>
+
+  <!-- eDNA particles -->
+  <g fill="#8fd3dc">
+    <circle cx="700" cy="70" r="2.2" opacity="0.7"/><circle cx="742" cy="118" r="1.6" opacity="0.5"/>
+    <circle cx="805" cy="64" r="2.8" opacity="0.6"/><circle cx="860" cy="140" r="1.8" opacity="0.5"/>
+    <circle cx="920" cy="92" r="2.4" opacity="0.7"/><circle cx="975" cy="58" r="1.5" opacity="0.4"/>
+    <circle cx="1010" cy="150" r="2.6" opacity="0.6"/><circle cx="1068" cy="104" r="1.9" opacity="0.5"/>
+    <circle cx="1120" cy="72" r="2.2" opacity="0.6"/><circle cx="1150" cy="160" r="1.4" opacity="0.4"/>
+    <circle cx="660" cy="160" r="1.7" opacity="0.4"/><circle cx="1090" cy="200" r="2.1" opacity="0.5"/>
+  </g>
+
+  <!-- stylized double helix -->
+  <g fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M690 200 C 740 170, 790 230, 840 200 S 940 170, 990 200 S 1090 230, 1140 200" stroke="#3fa7b5" opacity="0.85"/>
+    <path d="M690 200 C 740 230, 790 170, 840 200 S 940 230, 990 200 S 1090 170, 1140 200" stroke="#f2cc8f" opacity="0.85"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="1.5" opacity="0.35">
+    <line x1="715" y1="190" x2="715" y2="210"/><line x1="765" y1="188" x2="765" y2="212"/>
+    <line x1="815" y1="190" x2="815" y2="210"/><line x1="865" y1="190" x2="865" y2="210"/>
+    <line x1="915" y1="188" x2="915" y2="212"/><line x1="965" y1="190" x2="965" y2="210"/>
+    <line x1="1015" y1="190" x2="1015" y2="210"/><line x1="1065" y1="188" x2="1065" y2="212"/>
+    <line x1="1115" y1="190" x2="1115" y2="210"/>
+  </g>
+
+  <!-- rocky reef silhouette -->
+  <path d="M0 320 C 80 290, 140 305, 210 286 C 280 268, 330 300, 410 284 C 500 266, 560 296, 650 280 C 740 264, 800 292, 880 278 C 960 262, 1030 290, 1110 274 C 1150 266, 1180 272, 1200 270 L1200 360 L0 360 Z" fill="#071a2b"/>
+  <path d="M0 340 C 120 318, 230 334, 360 320 C 520 302, 640 332, 800 316 C 960 300, 1080 326, 1200 312 L1200 360 L0 360 Z" fill="#04111d"/>
+
+  <!-- small cryptobenthic fish silhouettes on the reef -->
+  <g fill="url(#reef)">
+    <path d="M300 279 q 14 -9 30 -2 l 8 -5 l -1 9 l 1 9 l -8 -5 q -16 7 -30 -2 z"/>
+    <path d="M845 271 q 11 -7 24 -1 l 6 -4 l -1 7 l 1 7 l -6 -4 q -13 6 -24 -1 z"/>
+  </g>
+  <g fill="#f2cc8f">
+    <path d="M560 288 q 10 -6 21 -1 l 5 -4 l -1 6 l 1 6 l -5 -4 q -11 5 -21 -1 z"/>
+  </g>
+
+  <!-- text -->
+  <text x="60" y="118" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Cryptobenthic fishes</text>
+  <text x="60" y="170" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">of the Gulf of California</text>
+  <text x="62" y="214" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="20" fill="#bfe3e8">Community structure from collections and environmental DNA</text>
+  <rect x="62" y="236" width="64" height="4" rx="2" fill="#e07a5f"/>
+  <text x="62" y="264" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="15" letter-spacing="1.5" fill="#8fb7c9">CBF-2026-4124 · OBJECTIVE 1 · CIBNOR</text>
+</svg>
