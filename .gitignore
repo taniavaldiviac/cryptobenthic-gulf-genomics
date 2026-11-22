@@ -1,0 +1,39 @@
+# Raw and large sequence data (deposited in NCBI SRA)
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.sam
+*.cram
+*.vcf.gz
+*.bcf
+*.h5
+*.sra
+data/raw/
+data/intermediate/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Credentials
+.env
+*.key
+
+# Unpublished results (added upon manuscript submission)
+analyses/*/results/
