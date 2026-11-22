@@ -47,41 +47,38 @@ This repository holds the code and analyses for **Objective 1 of project CBF-202
 ## Workflow
 
 ```mermaid
-flowchart LR
-    subgraph Field
-        A[Anaesthetic collections<br/>1 m² quadrats] 
-        B[Seawater samples<br/>eDNA filtration]
-    end
-    subgraph Laboratory
-        C[Species identification]
-        D[Mitogenome sequencing<br/>genome skimming]
-        E[Metabarcoding libraries]
-    end
-    subgraph Analysis
-        F[Local reference database]
-        G[Taxonomic assignment]
-        H[Alpha and beta diversity]
-    end
-    A --> C --> H
-    A --> D --> F
-    F --> M[Marker design] --> E
-    B --> E --> G
-    F --> G --> H
+flowchart TB
+    A(["Anaesthetic collections"]):::field
+    B(["Seawater eDNA samples"]):::field
+    C["Species identification"]:::lab
+    D["Mitogenomes<br/>(genome skimming)"]:::lab
+    F["Local reference database"]:::lab
+    M["Cryptobenthic marker"]:::lab
+    E["Metabarcoding"]:::lab
+    H{{"Alpha and beta diversity"}}:::out
+
+    A --> C
+    A --> D --> F --> M --> E
+    B --> E
+    F --> E
+    C --> H
+    E --> H
+
+    classDef field fill:#0b3c5d,stroke:#0b3c5d,color:#ffffff
+    classDef lab fill:#e8f4f6,stroke:#3fa7b5,color:#0a2a43
+    classDef out fill:#e07a5f,stroke:#c8553d,color:#ffffff
 ```
 
 ## Repository map
 
-```
-.
-├── analyses/
-│   ├── community_structure/   alpha and beta diversity from collections and eDNA
-│   ├── reference_gaps/        reference coverage, primer mismatches and resolution (in silico)
-│   └── marker_design/         cryptobenthic-specific mitochondrial marker
-├── data/                      sample metadata only; sequences go to NCBI
-├── protocols/                 field and laboratory protocols
-├── scripts/                   shared utilities
-└── assets/                    figures for this page
-```
+| Folder | Contents |
+| --- | --- |
+| [`analyses/community_structure`](analyses/community_structure) | Alpha and beta diversity from collections and eDNA |
+| [`analyses/reference_gaps`](analyses/reference_gaps) | Reference coverage, primer mismatches and taxonomic resolution |
+| [`analyses/marker_design`](analyses/marker_design) | Cryptobenthic-specific mitochondrial marker |
+| [`data`](data) | Sample metadata; sequences are deposited in NCBI |
+| [`protocols`](protocols) | Field and laboratory protocols |
+| [`scripts`](scripts) | Shared utilities |
 
 ## Getting started
 
