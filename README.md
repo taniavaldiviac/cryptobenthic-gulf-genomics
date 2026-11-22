@@ -1,39 +1,33 @@
 # cryptobenthic-gulf-genomics
 
-**From genomes to species assemblages: neutral, selective and functional processes structuring cryptobenthic reef fish diversity in the Gulf of California**
+**Community structure of cryptobenthic reef fishes in the Gulf of California from anaesthetic collections and environmental DNA**
 
-Code, analyses and documentation for project CBF-2026-4124 (SECIHTI, Ciencia Básica y de Frontera 2026), hosted at the Centro de Investigaciones Biológicas del Noroeste (CIBNOR), La Paz, Baja California Sur, Mexico.
+Code, analyses and documentation for Objective 1 of project CBF-2026-4124 (SECIHTI, Ciencia Básica y de Frontera 2026), hosted at the Centro de Investigaciones Biológicas del Noroeste (CIBNOR), La Paz, Baja California Sur, Mexico.
 
-> *Español:* Repositorio del proyecto CBF-2026-4124. Contiene código, análisis y documentación sobre la congruencia entre la diversidad de especies y la diversidad genética de peces criptobentónicos arrecifales del Golfo de California, con eDNA, ddRAD, genomas completos y RNA-seq.
+> *Español:* Repositorio del Objetivo 1 del proyecto CBF-2026-4124: estructura comunitaria espacial (diversidad alfa y beta) de los peces criptobentónicos arrecifales del Golfo de California a partir de colectas con anestésico y de ADN ambiental (eDNA).
 
-## Scientific scope
+## Scope
 
-The project tests whether spatial turnover in community composition and genetic divergence among populations are congruent (species–genetic diversity correlations, SGDCs), and whether that congruence is driven by neutral, selective or functional processes. Cryptobenthic reef fishes of the Gulf of California are the model assemblage.
+Objective 1 characterizes the spatial community structure (alpha and beta diversity) of the cryptobenthic reef fish assemblage across the Gulf of California, combining anaesthetic collections with eDNA metabarcoding. Because standard fish metabarcoding markers detect few cryptobenthic species, this objective also evaluates public reference databases and primers, and develops a cryptobenthic-specific mitochondrial marker.
 
-| Objective | Approach | Folder |
+| Component | Approach | Folder |
 | --- | --- | --- |
-| 1. Community structure (alpha and beta diversity) | Anaesthetic collections and eDNA metabarcoding | `analyses/01_community_edna` |
-| 1a. eDNA blind spots: reference gaps, primer bias, resolution | In silico analysis of public databases | `analyses/01a_reference_gaps` |
-| 1b. Cryptobenthic-specific mitochondrial marker | Mitogenome comparison and primer design | `analyses/01b_marker_design` |
-| 2. Neutral and adaptive divergence across species | ddRAD-seq | `analyses/02_ddrad_neutral_adaptive` |
-| 3. Reference genomes of three dominant species | PacBio HiFi and Hi-C | `analyses/03_reference_genomes` |
-| 4. Genomic regions under selection | High-coverage whole-genome resequencing (HiWGS) | `analyses/04_hiwgs_selection` |
-| 5. Function of genes under selection | Annotation, GO and KEGG enrichment | `analyses/05_functional_annotation` |
-| 6. Functional expression patterns | RNA-seq | `analyses/06_rnaseq_expression` |
-| 7. Hypothesis tests | Mantel tests and distance-decay analyses | `analyses/07_hypothesis_tests` |
+| Community structure (alpha and beta diversity) | Anaesthetic collections and eDNA metabarcoding | `analyses/community_structure` |
+| Reference databases, primer bias and taxonomic resolution | In silico analysis of public databases | `analyses/reference_gaps` |
+| Cryptobenthic-specific mitochondrial marker | Mitogenome comparison and primer design | `analyses/marker_design` |
 
 ## Repository structure
 
 ```
-analyses/      one folder per objective; each has its own README, code and small result tables
-data/          sample metadata only; raw sequence data are deposited in NCBI SRA (see data/README.md)
+analyses/      one folder per component; each has its own README, code and small result tables
+data/          sample metadata only; raw sequence data are deposited in NCBI (see data/README.md)
 protocols/     field and laboratory protocols
 scripts/       shared utility functions
 ```
 
 ## Data policy
 
-Raw sequencing data are not stored in this repository. They will be deposited in NCBI SRA under a BioProject linked to each publication. Large intermediate files are excluded through `.gitignore`.
+Raw sequencing data are not stored in this repository. They will be deposited in NCBI under a BioProject linked to each publication. Large intermediate files are excluded through `.gitignore`.
 
 ## License
 
